@@ -1,0 +1,1071 @@
+<!DOCTYPE html>
+<html lang="en-us">
+	<head>
+		<meta charset="utf-8">
+		<!--<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">-->
+
+		<title> SmartAdmin </title>
+		<meta name="description" content="">
+		<meta name="author" content="">
+			
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<!-- Basic Styles -->
+		<link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" media="screen" href="css/font-awesome.min.css">
+
+		<!-- SmartAdmin Styles : Please note (smartadmin-production.css) was created using LESS variables -->
+		<link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-production.min.css">
+		<link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-skins.min.css">
+		<link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap-datetimepicker.min.css">
+
+		<link rel="stylesheet" type="text/css" media="screen" href="css/main.css">
+		<!-- SmartAdmin RTL Support is under construction
+			 This RTL CSS will be released in version 1.5
+		<link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-rtl.min.css"> -->
+
+		<!-- We recommend you use "your_style.css" to override SmartAdmin
+				 specific styles this will also ensure you retrain your customization with each SmartAdmin update.
+		<link rel="stylesheet" type="text/css" media="screen" href="css/your_style.css"> -->
+
+		<!-- Demo purpose only: goes with demo.js, you can delete this css when designing your own WebApp -->
+		<link rel="stylesheet" type="text/css" media="screen" href="css/demo.min.css">
+
+		<!-- FAVICONS -->
+		<link rel="shortcut icon" href="img/favicon/favicon.ico" type="image/x-icon">
+		<link rel="icon" href="img/favicon/favicon.ico" type="image/x-icon">
+
+		<!-- GOOGLE FONT -->
+		<!-- <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,300,400,700"> -->
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,400italic,700italic&subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'>
+
+		<!-- Specifying a Webpage Icon for Web Clip 
+			 Ref: https://developer.apple.com/library/ios/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html -->
+		<link rel="apple-touch-icon" href="img/splash/sptouch-icon-iphone.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="img/splash/touch-icon-ipad.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="img/splash/touch-icon-iphone-retina.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="img/splash/touch-icon-ipad-retina.png">
+		
+		<!-- iOS web-app metas : hides Safari UI Components and Changes Status Bar Appearance -->
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		
+		<!-- Startup image for web apps -->
+		<link rel="apple-touch-startup-image" href="img/splash/ipad-landscape.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape)">
+		<link rel="apple-touch-startup-image" href="img/splash/ipad-portrait.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait)">
+		<link rel="apple-touch-startup-image" href="img/splash/iphone.png" media="screen and (max-device-width: 320px)">
+
+	</head>
+	<body class="menu-on-top">
+		<!-- possible classes: minified, fixed-ribbon, fixed-header, fixed-width-->
+
+		<!-- HEADER -->
+		<header id="header">
+			<div id="logo-group">
+
+				<!-- PLACE YOUR LOGO HERE -->
+				<a class="navbar-brand" href="#"><img src="img/logo1.png" height="40" width="170" alt=""></a>
+				<!-- END LOGO PLACEHOLDER -->
+
+			</div>
+
+			<!-- pulled right: nav area -->
+			<div class="pull-right">
+				
+				<!-- collapse menu button -->
+				<div id="hide-menu" class="btn-header pull-right">
+					<span> <a href="javascript:void(0);" data-action="toggleMenu" title="Collapse Menu"><i class="fa fa-reorder"></i></a> </span>
+				</div>
+				<!-- end collapse menu -->
+				
+				<!-- #MOBILE -->
+				<!-- Top menu profile link : this shows only when top menu is active -->
+				<ul id="mobile-profile-img" class="header-dropdown-list hidden-xs padding-5">
+					<li class="">
+						<a href="#" class="dropdown-toggle no-margin userdropdown" data-toggle="dropdown"> 
+							<img src="img/avatars/sunny.png" alt="John Doe" class="online" />  
+						</a>
+						<ul class="dropdown-menu pull-right profile-drop">
+							<li><a href="#"><i class="fa fa-user"></i> Профиль</a></li>
+							<li class="divider"></li>
+							<li><a href="#"><i class="fa fa-sign-out fa-lg"></i> <strong>Выход</strong></a></li>
+						</ul>
+					</li>
+				</ul>
+
+				<!-- fullscreen button -->
+				<div id="fullscreen" class="btn-header transparent pull-right">
+					<span> <a href="javascript:void(0);" data-action="launchFullscreen" title="Full Screen"><i class="fa fa-arrows-alt"></i></a> </span>
+				</div>
+				<!-- end fullscreen button -->
+				
+			</div>
+			<!-- end pulled right: nav area -->
+
+		</header>
+		<!-- END HEADER -->
+
+		<!-- Left panel : Navigation area -->
+		<!-- Note: This width of the aside area can be adjusted through LESS variables -->
+		<aside id="left-panel">
+
+			
+
+			<!-- User info -->
+			<div class="login-info">
+				<span> <!-- User image size is adjusted inside CSS, it should stay as it --> 
+					
+					<a href="javascript:void(0);" id="show-shortcut" data-action="toggleShortcut">
+						<img src="img/avatars/sunny.png" alt="me" class="online" /> 
+						<span>
+							john.doe 
+						</span>
+						<i class="fa fa-angle-down"></i>
+					</a> 
+					
+				</span>
+			</div>
+			<!-- end user info -->
+
+			<!-- NAVIGATION : This navigation is also responsive
+
+			To make this navigation dynamic please make sure to link the node
+			(the reference to the nav > ul) after page load. Or the navigation
+			will not initialize.
+			-->
+			<nav>
+				<!-- NOTE: Notice the gaps after each icon usage <i></i>..
+				Please note that these links work a bit different than
+				traditional href="" links. See documentation for details.
+				-->
+
+				<ul>
+					<li class="active">
+						<a href="index.html"><i class="fa fa-lg fa-fw fa-indent"></i> <span class="menu-item-parent">Заказы</span></a>
+					</li>
+					<li>
+						<a href="index_calls.html"><i class="fa fa-lg fa-fw fa-phone-square"></i> <span class="menu-item-parent">Звонки</span><span class="badge pull-right inbox-badge">?</span></a>
+						<ul>
+							<li>
+								<a href="#">Мои звонки</a>
+							</li>
+							<li>
+								<a href="#">Все звонки</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a href="estimate.html"><i class="fa fa-lg fa-fw fa-money"></i> <span class="menu-item-parent">Оценки</span></a>
+					</li>
+					<li>
+						<a href="#"><i class="fa fa-lg fa-fw fa-group"></i> <span class="menu-item-parent">Партнеры</span></a>
+						<ul>
+							<li><a href="#">Список партнёров</a></li>
+							<li><a href="#">Привлечение партнёров</a></li>
+							<li><a href="#">История платежей</a></li>
+							<li class="divider"></li>
+							<li><a href="#">Текущие задачи</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="#"><i class="fa fa-lg fa-fw fa-file-text"></i> <span class="menu-item-parent">Отчеты</span></a>
+						<ul>
+							<li><a href="#">Каналы</a></li>
+							<li><a href="#">Операторы</a></li>
+							<li><a href="#">Менеджеры</a></li>
+							<li class="divider"></li>
+							<li><a href="#">Персональный отчёт</a></li>
+							<li class="divider"></li>
+							<li><a href="#">Сводный отчет</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="#"><i class="fa fa-lg fa-fw fa-phone"></i> <span class="menu-item-parent">Контакты</span></a>
+					</li>
+				
+				</ul>
+			</nav>
+			<span class="minifyme" data-action="minifyMenu"> 
+				<i class="fa fa-arrow-circle-left hit"></i> 
+			</span>
+
+		</aside>
+		<!-- END NAVIGATION -->
+
+		<!-- MAIN PANEL -->
+		<div id="main" role="main">
+
+			<!-- MAIN CONTENT -->
+			<div id="content">
+
+				<div class="row">
+					<article class="col-md-12">
+						<h1 class="page-title txt-color-blueDark">
+							<i class="fa fa-edit fa-fw "></i> 
+								Заказы 
+							<span>&gt; 
+								Заказ № <strong>20391</strong>
+							</span>
+						</h1>
+					</article>
+				</div>
+				<div class="row" id="container-wrap">
+					<article class="col-md-6 clearfix" id="container1">
+
+						<div id="item1">
+							
+							<div class="jarviswidget jarviswidget-color-blueDark" data-widget-editbutton="false" data-widget-fullscreenbutton="false">
+								<header>
+									<span class="widget-icon"> <i class="fa fa-comments txt-color-white"></i> </span>
+									<h2>Информация о заказе</h2>
+								</header>
+
+								<div aria-hidden="false" aria-expanded="true" role="tabpanel" class="ui-tabs-panel ui-widget-content ui-corner-bottom">
+									<div>
+										<form class="smart-form" role="form">
+											<div class="row margin-bottom-10">
+												<label class="col col-md-12 col-xs-12">Услуга</label>
+												<div class="col col-md-12 col-xs-12">
+													<div class="col-md-6 col-xs-6">
+														<label class="radio">
+															<input type="radio" name="optionsRadiosInline" id="optionsRadiosInline1" value="option1" checked><i></i>Легковая эвакуация
+														</label>
+														<label class="radio">
+															<input type="radio" name="optionsRadiosInline" id="optionsRadiosInline3" value="option3"><i></i>Грузовая эвакуация
+														</label>
+														<label class="radio">
+															<input type="radio" name="optionsRadiosInline" id="optionsRadiosInline5" value="option5"><i></i>Техпомощь
+														</label>
+														<label class="radio">
+															<input type="radio" name="optionsRadiosInline" id="optionsRadiosInline7" value="option7"><i></i>Вытащить на дорогу
+														</label>
+													</div>
+													<div class="col-md-6 col-xs-6">
+														<label class="radio">
+															<input type="radio" name="optionsRadiosInline" id="optionsRadiosInline2" value="option2"><i></i>Эвакуация коммерческого а/м
+														</label>
+														<label class="radio">
+															<input type="radio" name="optionsRadiosInline" id="optionsRadiosInline4" value="option4"><i></i>Перевозка спецтехники
+														</label>
+														<label class="radio">
+															<input type="radio" name="optionsRadiosInline" id="optionsRadiosInline6" value="option6"><i></i>Трезвый водитель
+														</label>
+														<label class="radio">
+															<input type="radio" name="optionsRadiosInline" id="optionsRadiosInline8" value="option8"><i></i>Вскрытие замков
+														</label>
+													</div>
+												</div>
+											</div>
+											<div class="margin-bottom-10 clearfix">
+												<div class="" id="makemodel">
+													<label for="clientName" class="col-md-3 col-xs-3 control-label" >Марка и модель</label>
+													<label class="col-md-9 col-xs-9 input">
+														<input class="input-sm" placeholder="Назовите марку и модель вашего автомобиля" type="text" id="avto">
+													</label>
+												</div>
+												<div class="" style="display: none;" id="weights">
+													<label for="weight" class="col-md-3 col-xs-3 control-label">Масса</label>
+													<label class="col-md-9 col-xs-9 input">
+														<input type="text" class="input-sm" id="weight" placeholder="Назовите полную массу вашего автомобиля">
+													</label>
+												</div>
+												<div class="" style="display: none;" id="osis">
+													<label for="osi" class="col-md-3 col-xs-3 control-label">Кол-во осей</label>
+													<label class="col-md-9 col-xs-9 input">
+														<input type="text" class="input-sm" id="osi" placeholder="Сколько осей у вашего автомобиля">
+													</label>
+												</div>
+												<div class="" style="display: none;" id="gabarits">
+													<label for="gabarit" class="col-md-3 col-xs-3 control-label">Габариты</label>
+													<label class="col-md-9 col-xs-9 input">
+														<input type="text" class="input-sm" id="gabarit" placeholder="Назовите габариты и длину базы">
+													</label>
+												</div>
+											</div>
+											<!-- SuperBox -->
+											<div class="margin-bottom-10 clearfix">
+												<div class="superbox col-sm-12 text-center">
+													<div class="superbox-list">
+														<img src="img/superbox/superbox-thumb-1.jpg" data-img="img/superbox/superbox-full-1.jpg" alt="My first photoshop layer mask on a high end PSD template theme" title="Miller Cine" class="superbox-img">
+													</div><!--
+													--><div class="superbox-list">
+														<img src="img/superbox/superbox-thumb-2.jpg" data-img="img/superbox/superbox-full-2.jpg" alt="My first photoshop layer mask on a high end PSD template theme" title="Bridge of Edgen" class="superbox-img">
+													</div><!--
+													--><div class="superbox-list">
+														<img src="img/superbox/superbox-thumb-3.jpg" data-img="img/superbox/superbox-full-3.jpg" alt="My first photoshop layer mask on a high end PSD template theme" title="Lines of Friendship" class="superbox-img">
+													</div>
+													<div class="superbox-float"></div>
+												</div>
+												<div class="superbox-show" style="height:300px; display: none"></div>
+											</div>
+											<!-- /SuperBox -->
+											<div class="margin-bottom-10 clearfix">
+												<div class="form-group">
+													<label>Состояние транспортного средства</label>
+													<select multiple style="width:100%" class="select2">
+														<optgroup label="">
+															<option value="AL">Заблокированные колеса</option>
+															<option value="AR">Требуются отчетные документы</option>
+															<option value="IL">Сложности для подъезда эвакуатора</option>
+															<option value="IA">Заблокирован руль</option>
+															<option value="KS">Отсутствует буксировочный крюк</option>
+														</optgroup>
+													</select>
+												</div>
+											</div>
+										</form>
+									</div>
+								</div>
+							</div>
+
+						</div>
+
+						<div id="item3">
+
+							<div class="jarviswidget jarviswidget-color-blueDark" data-widget-editbutton="false" data-widget-fullscreenbutton="false">
+								<header>
+									<span class="widget-icon"> <i class="fa fa-comments txt-color-white"></i> </span>
+									<h2>Маршрут</h2>
+								</header>
+
+								<div aria-hidden="false" aria-expanded="true" role="tabpanel" class="ui-tabs-panel ui-widget-content ui-corner-bottom">
+									<div>
+										<form class="smart-form" role="form">
+											<div class="margin-bottom-10 clearfix">
+												<div class="clearfix">
+													<label for="point-1" class="col-md-1 col-xs-1 label label-success">A</label>
+													<label class="col-md-11 col-xs-11 input">
+														<input type="text" class="input-sm" id="point-1" name="point-1" placeholder="Куда необходимо подать эвакуатор?">
+													</label>
+												</div>
+												<div id="point-field"></div>
+												<div class="clearfix">
+													<label for="point-2" class="col-md-1 col-xs-1 control-label"><span class="label label-success">B</span></label>
+													<label class="col-md-11 col-xs-11 input">
+														<input type="text" class="input-sm" id="point-2" name="point-2" placeholder="Куда необходимо будет перевезти ваш автомобиль?">
+													</label>
+												</div>
+											</div>
+											<div class="margin-bottom-10 clearfix">
+												<div class="col-md-5 col-xs-5">
+													<a href="javascript:void(0);" onclick="point()" class="btn btn-primary btn-sm">Добавить пункт <i class="fa fa-plus"></i></a>
+												</div>
+												<div class="col-md-7 col-xs-7 pull-right text-right">
+													<div class="panel panel-default distance">
+														<div class="panel-body">
+														<ul>
+															<li>
+																<strong>Расстояние: </strong><i class="space">25,2 км</i>
+															</li>
+															<li>
+																<strong>Время: </strong><i class="time">10 мин</i>
+															</li>
+														</ul>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="margin-bottom-10 clearfix">
+												<div class="col-md-4 col-xs-4 margin-top-5">
+													<label class="radio">
+														<input type="radio" name="timeOption" value="asap" id="timeASAP" checked><i></i>Ближайшее время
+													</label>
+												</div>
+												<div class="col-md-8 col-xs-8">
+													<label class="col-xs-12 input radio-data-wrap" >
+														<label class="radio radio-data" >
+															<input type="radio" name="timeOption" value="asap" id="timeASAP2"><i></i>
+														</label>
+														<div class="input-group date form_datetime" data-date="" data-date-format="dd MM yyyy - HH:ii">
+															<input class="form-control" size="16" type="text" value="">
+													 <span id="offset">GMT: <i></i></span>
+															<span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
+														</div>
+													</label>
+												</div>
+											</div>
+											<button type="submit" class="btn btn-success btn-sm">Сохранить</button>
+										</form>
+									</div>
+								</div>
+							</div>
+
+						</div>
+
+						<div id="item5">
+
+							<div class="jarviswidget jarviswidget-color-blueDark" data-widget-editbutton="false" data-widget-fullscreenbutton="false">
+								<header>
+									<span class="widget-icon"> <i class="fa fa-comments txt-color-white"></i> </span>
+									<h2>Исполнитель</h2>
+								</header>
+
+								<div class="clearfix">
+									<div class="panel panel-default">
+										<div class="panel-heading">
+											<span class="badge">№ 392</span>
+											<span class="glyphicon glyphicon-star"></span>
+											<span class="glyphicon glyphicon-star"></span>
+											<span class="glyphicon glyphicon-star"></span>
+											<span class="glyphicon glyphicon-star-empty"></span>
+											<span class="glyphicon glyphicon-star-empty"></span> 
+											<strong>Василий Чехов-Малаховка-Домодедово, 15%</strong> 
+										</div>
+										<div class="panel-body">
+											<p><strong>Эвакуация в черте города:</strong></p>
+											<ul>
+												<li>Эвакуация легковых автомобилей &ndash; 1500 руб./час</li>
+												<li>Эвакуация грузовых автомобилей &ndash; 1500 руб./час</li>
+												<li>Эвакуация спецтехники автомобилей &ndash; 1500 руб./час</li>
+												<li>Эвакуация кунгов автомобилей &ndash; 1500 руб./час</li>
+											</ul>
+											<p><strong>Дополнительно оплачивается:</strong></p>
+											<ul>
+												<li>Пробег за МКАД &ndash; 40 руб./км</li>
+												<li>Работа в ночное время &ndash; +500 руб.</li>
+											</ul>
+										</div>
+										<div class="panel-footer">
+											<p><strong>Комментарий:</strong> 24 ч, 2 эвакуатора, Isuzu со сдвижной платформой, предоставляет БСО</p>
+											<span>
+												<strong>Телефоны:</strong> 
+												<a href="#" class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-phone"></span>01969 (Диспетчер)</a> 
+												<a href="#" class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-phone"></span>13429 (Резервный)</a>
+												<a href="#" class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-phone"></span>19649 (Водитель)</a>
+												<a href="#" class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-phone"></span>19269</a>
+											</span>
+										</div>
+									</div>
+									<form class="smart-form" role="form">
+										<div class="row">
+											<label for="total" class="col col-md-3 col-xs-3 control-label">Стоимость</label>
+											<label class="col col-md-9 col-xs-9 input">
+												<input type="text" class="input-sm" id="total" value="1500+40 ~2800">
+											</label>
+										</div>
+										<div class="row">
+											<label for="percent" class="col col-md-3 col-xs-3 control-label">Процент</label>
+											<div class="col col-md-3 col-xs-3">
+												<div class="input-group">
+													<label class="radio radio-data">
+														<input type="radio" name="percentOption" value="asap" checked><i></i>
+													</label>
+													<input type="text" class="form-control" id="percent" name="percent" value="15%">
+												</div>
+											</div>
+										</div>
+										<div class="row">
+											<label for="comission" class="col col-md-3 col-xs-3 control-label">Комиссия</label>
+											<div class="col col-md-3 col-xs-3">
+												<div class="input-group">
+													<label class="radio radio-data">
+														<input type="radio" name="percentOption" value="asap"><i></i>
+													</label>
+													<input type="text" class="form-control" id="comission" name="comission" value="300 руб.">
+												</div>
+											</div>
+										</div>
+
+										<button type="button" class="btn btn-success btn-xs">Назначить</button>
+										<button type="button" class="btn btn-info btn-xs">Автозапрос</button>
+										<button type="button" class="btn btn-primary btn-xs">Сохранить запрос</button>
+									</form>
+								</div>
+							</div>
+
+						</div>
+
+					</article>
+					<article class="col-md-6 clearfix" id="container2">
+						<div class="tst"></div>
+						<div id="item2">
+
+							<div class="jarviswidget jarviswidget-color-blueDark jarviswidget-sortable" data-widget-editbutton="false" data-widget-colorbutton="false">
+
+								<header>
+									<span class="widget-icon"> <i class="fa fa-check txt-color-white"></i> </span>
+									<h2>Информация о клиенте</h2>
+								</header>
+								
+								<div>
+									<div class="smart-form" role="form">
+										<label for="clientName" class="col-md-12 col-xs-12" >Имя клиента</label>
+										<div id="contact-field" class="margin-bottom-10 jarviswidget row clearfix">
+											<div class="ui-state-default clearfix">
+												<div class="drag-lab"></div>
+												<a data-dismiss="alert" class="icon-append close-point delete-contact"><i class="fa fa-times-circle"></i></a>
+												<label class="col col-6 input name"><i class="icon-prepend fa fa-user"></i><input type="text" name="clientName" placeholder="Имя"></label>
+												<label class="col col-6 input"><i class="icon-prepend fa fa-phone"></i>
+													<input type="text" name="clientName" placeholder="Телефон">
+													<a class="btn-primary btn-xs call">Вызов</a>
+												</label>
+											</div>
+										</div>
+
+										<!-- <div id="contact-field" class="row"></div> -->
+										<div class="margin-bottom-10 text-right clearfix">
+											<a href="javascript:void(0);" onclick="contact()" class="btn btn-primary btn-sm">Добавить контакт <i class="fa fa-plus"></i></a>
+										</div>
+										<div class="margin-bottom-10 clearfix">
+											<div class="">
+												<label class="col-md-4 col-xs-4 margin-top-5">Комментарий</label>
+												<label class="col-md-8 col-xs-8 textarea"> <i class="icon-append fa fa-comment"></i>
+													<textarea rows="3" name="review" id="comment" placeholder="Любая дополнительная информация о заказе"></textarea>
+												</label>
+											</div>
+											<div class="">
+												<label class="col-md-4 col-xs-4 margin-top-5">Откуда о нас узнали</label>
+												<label class="col-md-8 col-xs-8 select">
+													<select class="input-sm valid" id="source">
+														<option value="0">&nbsp;</option>
+														<option value="1">Яндекс</option>
+														<option value="1">Google</option>
+														<option value="2">Интернет</option>
+														<option value="2">Знакомые</option>
+														<option value="3">Постоянный клиент</option>
+														<option value="3">Другое</option>
+													</select><i></i>
+												</label>
+											</div>
+											<div class="">
+												<label class="col-md-4 col-xs-4 margin-top-5">Источник</label>
+												<label class="col-md-8 col-xs-8 select">
+													<select class="input-sm" id="source1">
+														<option>vladivostok.evakuator.ru</option>
+														<option>balashiha.evakuator.ru</option>
+														<option>FixMyRide</option>
+														<option>iZasada</option>
+														<option>Знакомые</option>
+														<option>Партнёр</option>
+													</select><i></i>
+												</label>
+											</div>
+											<label class="col-md-4 col-xs-4 margin-top-5">Статус заказа</label>
+											<label class="col-md-8 col-xs-8 select">
+												<select class="input-sm valid" id="source2">
+													<option value="0">&nbsp;</option>
+													<option value="1">option1</option>
+													<option value="1">option2</option>
+													<option value="2">option3</option>
+													<option value="2">option4</option>
+													<option value="3">option5</option>
+													<option value="3">option6</option>
+												</select><i></i>
+											</label>
+										</div>
+									</div>
+								</div>
+							</div>
+
+						</div>
+
+						<div id="item4">
+
+							<div class="jarviswidget" data-widget-colorbutton="false" data-widget-editbutton="false">
+
+								<header>
+									<span class="widget-icon"> <i class="fa fa-map-marker"></i> </span>
+									<h2>Маршрут и исполнители</h2>
+								</header>
+
+								<!-- widget div-->
+								<div style="padding-top:0;">
+									<!-- widget edit box -->
+									<div class="jarviswidget-editbox">
+										<div>
+											<label>Title:</label>
+											<input type="text" />
+										</div>
+									</div>
+									<!-- end widget edit box -->
+
+									<div class="widget-body no-padding">
+										<!-- content goes here -->
+
+										<div id="map-canvas" class="vector-map"></div>
+
+										<table class="table table-striped table-hover table-condensed">
+											<thead>
+												<tr>
+													<th>Country</th>
+													<th>Visits</th>
+													<th class="text-align-center">User Activity</th>
+													<th class="text-align-center">Online</th>
+													<th class="text-align-center">Demographic</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td><a href="javascript:void(0);">USA</a></td>
+													<td>4,977</td>
+													<td class="text-align-center">
+													<div class="sparkline txt-color-blue text-align-center" data-sparkline-height="22px" data-sparkline-width="90px" data-sparkline-barwidth="2">
+														2700, 3631, 2471, 1300, 1877, 2500, 2577, 2700, 3631, 2471, 2000, 2100, 3000
+													</div></td>
+													<td class="text-align-center">143</td>
+													<td class="text-align-center">
+													<div class="sparkline display-inline" data-sparkline-type='pie' data-sparkline-piecolor='["#E979BB", "#57889C"]' data-sparkline-offset="90" data-sparkline-piesize="23px">
+														17,83
+													</div>
+													<div class="btn-group display-inline pull-right text-align-left hidden-tablet">
+														<button class="btn btn-xs btn-default dropdown-toggle" data-toggle="dropdown">
+															<i class="fa fa-cog fa-lg"></i>
+														</button>
+														<ul class="dropdown-menu dropdown-menu-xs pull-right">
+															<li>
+																<a href="javascript:void(0);"><i class="fa fa-file fa-lg fa-fw txt-color-greenLight"></i> <u>P</u>DF</a>
+															</li>
+															<li>
+																<a href="javascript:void(0);"><i class="fa fa-times fa-lg fa-fw txt-color-red"></i> <u>D</u>elete</a>
+															</li>
+															<li class="divider"></li>
+															<li class="text-align-center">
+																<a href="javascript:void(0);">Cancel</a>
+															</li>
+														</ul>
+													</div></td>
+												</tr>
+												<tr>
+													<td><a href="javascript:void(0);">Australia</a></td>
+													<td>4,873</td>
+													<td class="text-align-center">
+													<div class="sparkline txt-color-blue text-align-center" data-sparkline-height="22px" data-sparkline-width="90px" data-sparkline-barwidth="2">
+														1000, 1100, 3030, 1300, -1877, -2500, -2577, -2700, 3631, 2471, 4700, 1631, 2471
+													</div></td>
+													<td class="text-align-center">247</td>
+													<td class="text-align-center">
+													<div class="sparkline display-inline" data-sparkline-type='pie' data-sparkline-piecolor='["#E979BB", "#57889C"]' data-sparkline-offset="90" data-sparkline-piesize="23px">
+														22,88
+													</div>
+													<div class="btn-group display-inline pull-right text-align-left hidden-tablet">
+														<button class="btn btn-xs btn-default dropdown-toggle" data-toggle="dropdown">
+															<i class="fa fa-cog fa-lg"></i>
+														</button>
+														<ul class="dropdown-menu dropdown-menu-xs pull-right">
+															<li>
+																<a href="javascript:void(0);"><i class="fa fa-file fa-lg fa-fw txt-color-greenLight"></i> <u>P</u>DF</a>
+															</li>
+															<li>
+																<a href="javascript:void(0);"><i class="fa fa-times fa-lg fa-fw txt-color-red"></i> <u>D</u>elete</a>
+															</li>
+															<li class="divider"></li>
+															<li class="text-align-center">
+																<a href="javascript:void(0);">Cancel</a>
+															</li>
+														</ul>
+													</div></td>
+												</tr>
+												<tr>
+													<td><a href="javascript:void(0);">India</a></td>
+													<td>3,671</td>
+													<td class="text-align-center">
+													<div class="sparkline txt-color-blue text-align-center" data-sparkline-height="22px" data-sparkline-width="90px" data-sparkline-barwidth="2">
+														3631, 1471, 2400, 3631, 471, 1300, 1177, 2500, 2577, 3000, 4100, 3000, 7700
+													</div></td>
+													<td class="text-align-center">373</td>
+													<td class="text-align-center">
+													<div class="sparkline display-inline" data-sparkline-type='pie' data-sparkline-piecolor='["#E979BB", "#57889C"]' data-sparkline-offset="90" data-sparkline-piesize="23px">
+														10,90
+													</div>
+													<div class="btn-group display-inline pull-right text-align-left hidden-tablet">
+														<button class="btn btn-xs btn-default dropdown-toggle" data-toggle="dropdown">
+															<i class="fa fa-cog fa-lg"></i>
+														</button>
+														<ul class="dropdown-menu dropdown-menu-xs pull-right">
+															<li>
+																<a href="javascript:void(0);"><i class="fa fa-file fa-lg fa-fw txt-color-greenLight"></i> <u>P</u>DF</a>
+															</li>
+															<li>
+																<a href="javascript:void(0);"><i class="fa fa-times fa-lg fa-fw txt-color-red"></i> <u>D</u>elete</a>
+															</li>
+															<li class="divider"></li>
+															<li class="text-align-center">
+																<a href="javascript:void(0);">Cancel</a>
+															</li>
+														</ul>
+													</div></td>
+												</tr>
+												<tr>
+													<td><a href="javascript:void(0);">Brazil</a></td>
+													<td>2,476</td>
+													<td class="text-align-center">
+													<div class="sparkline txt-color-blue text-align-center" data-sparkline-height="22px" data-sparkline-width="90px" data-sparkline-barwidth="2">
+														2700, 1877, 2500, 2577, 2000, 3631, 2471, -2700, -3631, 2471, 1300, 2100, 3000,
+													</div></td>
+													<td class="text-align-center">741</td>
+													<td class="text-align-center">
+													<div class="sparkline display-inline" data-sparkline-type='pie' data-sparkline-piecolor='["#E979BB", "#57889C"]' data-sparkline-offset="90" data-sparkline-piesize="23px">
+														34,66
+													</div>
+													<div class="btn-group display-inline pull-right text-align-left hidden-tablet">
+														<button class="btn btn-xs btn-default dropdown-toggle" data-toggle="dropdown">
+															<i class="fa fa-cog fa-lg"></i>
+														</button>
+														<ul class="dropdown-menu dropdown-menu-xs pull-right">
+															<li>
+																<a href="javascript:void(0);"><i class="fa fa-file fa-lg fa-fw txt-color-greenLight"></i> <u>P</u>DF</a>
+															</li>
+															<li>
+																<a href="javascript:void(0);"><i class="fa fa-times fa-lg fa-fw txt-color-red"></i> <u>D</u>elete</a>
+															</li>
+															<li class="divider"></li>
+															<li class="text-align-center">
+																<a href="javascript:void(0);">Cancel</a>
+															</li>
+														</ul>
+													</div></td>
+												</tr>
+												<tr>
+													<td><a href="javascript:void(0);">Turkey</a></td>
+													<td>1,476</td>
+													<td class="text-align-center">
+													<div class="sparkline txt-color-blue text-align-center" data-sparkline-height="22px" data-sparkline-width="90px" data-sparkline-barwidth="2">
+														1300, 1877, 2500, 2577, 2000, 2100, 3000, -2471, -2700, -3631, -2471, 2700, 3631
+													</div></td>
+													<td class="text-align-center">123</td>
+													<td class="text-align-center">
+													<div class="sparkline display-inline" data-sparkline-type='pie' data-sparkline-piecolor='["#E979BB", "#57889C"]' data-sparkline-offset="90" data-sparkline-piesize="23px">
+														75,25
+													</div>
+													<div class="btn-group display-inline pull-right text-align-left hidden-tablet">
+														<button class="btn btn-xs btn-default dropdown-toggle" data-toggle="dropdown">
+															<i class="fa fa-cog fa-lg"></i>
+														</button>
+														<ul class="dropdown-menu dropdown-menu-xs pull-right">
+															<li>
+																<a href="javascript:void(0);"><i class="fa fa-file fa-lg fa-fw txt-color-greenLight"></i> <u>P</u>DF</a>
+															</li>
+															<li>
+																<a href="javascript:void(0);"><i class="fa fa-times fa-lg fa-fw txt-color-red"></i> <u>D</u>elete</a>
+															</li>
+															<li class="divider"></li>
+															<li class="text-align-center">
+																<a href="javascript:void(0);">Cancel</a>
+															</li>
+														</ul>
+													</div></td>
+												</tr>
+												<tr>
+													<td><a href="javascript:void(0);">Canada</a></td>
+													<td>146</td>
+													<td class="text-align-center">
+													<div class="sparkline txt-color-orange text-align-center" data-sparkline-height="22px" data-sparkline-width="90px" data-sparkline-barwidth="2">
+														5, 34, 10, 1, 4, 6, -9, -1, 0, 0, 5, 6, 7
+													</div></td>
+													<td class="text-align-center">23</td>
+													<td class="text-align-center">
+													<div class="sparkline display-inline" data-sparkline-type='pie' data-sparkline-piecolor='["#E979BB", "#57889C"]' data-sparkline-offset="90" data-sparkline-piesize="23px">
+														50,50
+													</div>
+													<div class="btn-group display-inline pull-right text-align-left hidden-tablet">
+														<button class="btn btn-xs btn-default dropdown-toggle" data-toggle="dropdown">
+															<i class="fa fa-cog fa-lg"></i>
+														</button>
+														<ul class="dropdown-menu dropdown-menu-xs pull-right">
+															<li>
+																<a href="javascript:void(0);"><i class="fa fa-file fa-lg fa-fw txt-color-greenLight"></i> <u>P</u>DF</a>
+															</li>
+															<li>
+																<a href="javascript:void(0);"><i class="fa fa-times fa-lg fa-fw txt-color-red"></i> <u>D</u>elete</a>
+															</li>
+															<li class="divider"></li>
+															<li class="text-align-center">
+																<a href="javascript:void(0);">Cancel</a>
+															</li>
+														</ul>
+													</div></td>
+												</tr>
+											</tbody>
+											<tfoot>
+												<tr>
+													<td colspan=5>
+													<ul class="pagination pagination-xs no-margin">
+														<li class="prev disabled">
+															<a href="javascript:void(0);">Previous</a>
+														</li>
+														<li class="active">
+															<a href="javascript:void(0);">1</a>
+														</li>
+														<li>
+															<a href="javascript:void(0);">2</a>
+														</li>
+														<li>
+															<a href="javascript:void(0);">3</a>
+														</li>
+														<li class="next">
+															<a href="javascript:void(0);">Next</a>
+														</li>
+													</ul></td>
+												</tr>
+											</tfoot>
+										</table>
+
+										<!-- end content -->
+
+									</div>
+
+								</div>
+								<!-- end widget div -->
+							</div>
+
+						</div>
+
+						<div id="item6">
+
+							<div class="jarviswidget jarviswidget-color-blueDark jarviswidget-sortable" data-widget-editbutton="false" data-widget-colorbutton="false">
+
+								<header>
+									<span class="widget-icon"> <i class="fa fa-check txt-color-white"></i> </span>
+									<h2>История действий</h2>
+								</header>
+								
+								<div>
+									<table class="table table-condensed">
+										<thead>
+											<tr>
+												<th>№</th>
+												<th>Партнёр</th>
+												<th>Стоимость</th>
+												<th>Комиссия</th>
+												<th></th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td><span class="badge">294</span></td>
+												<td>Владимир Солнцево</td>
+												<td>1500 руб.</td>
+												<td>10% (150 руб.)</td>
+												<td><a href="#" class="btn btn-success btn-xs">Назначить</a></td>
+											</tr>
+											<tr class="info">
+												<td><span class="badge">295</span></td>
+												<td>Александр Солнцево</td>
+												<td>1500 руб.</td>
+												<td>10% (150 руб.)</td>
+												<td><a href="#" class="btn btn-success btn-xs">Назначить</a></td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+
+						</div>
+
+					</article>
+				</div>
+			</div>
+		</div>
+			<!-- END MAIN CONTENT -->
+
+				
+
+		<!-- PAGE FOOTER -->
+		<div class="page-footer">
+			<div class="row">
+				<div class="col-xs-12 col-sm-6">
+					<span class="txt-color-white">Copyright © 2013-2014</span>
+				</div>
+
+				<div class="col-xs-6 col-sm-6 text-right hidden-xs">
+					<div class="txt-color-white inline-block">
+						<i class="txt-color-blueLight hidden-mobile">Last account activity <i class="fa fa-clock-o"></i> <strong>52 mins ago &nbsp;</strong> </i>
+						<div class="btn-group dropup">
+							<button class="btn btn-xs dropdown-toggle bg-color-blue txt-color-white" data-toggle="dropdown">
+								<i class="fa fa-link"></i> <span class="caret"></span>
+							</button>
+							<ul class="dropdown-menu pull-right text-left">
+								<li>
+									<div class="padding-5">
+										<p class="txt-color-darken font-sm no-margin">Download Progress</p>
+										<div class="progress progress-micro no-margin">
+											<div class="progress-bar progress-bar-success" style="width: 50%;"></div>
+										</div>
+									</div>
+								</li>
+								<li class="divider"></li>
+								<li>
+									<div class="padding-5">
+										<p class="txt-color-darken font-sm no-margin">Server Load</p>
+										<div class="progress progress-micro no-margin">
+											<div class="progress-bar progress-bar-success" style="width: 20%;"></div>
+										</div>
+									</div>
+								</li>
+								<li class="divider"></li>
+								<li>
+									<div class="padding-5">
+										<p class="txt-color-darken font-sm no-margin">Memory Load <span class="text-danger">*critical*</span></p>
+										<div class="progress progress-micro no-margin">
+											<div class="progress-bar progress-bar-danger" style="width: 70%;"></div>
+										</div>
+									</div>
+								</li>
+								<li class="divider"></li>
+								<li>
+									<div class="padding-5">
+										<button class="btn btn-block btn-default">refresh</button>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- END PAGE FOOTER -->
+
+		<!-- SHORTCUT AREA : With large tiles (activated via clicking user name tag)
+		Note: These tiles are completely responsive,
+		you can add as many as you like
+		-->
+		<div id="shortcut">
+			<ul>
+				<li>
+					<a href="#" class="jarvismetro-tile big-cubes bg-color-blue"> <span class="iconbox"> <i class="fa fa-envelope fa-4x"></i> <span>Mail <span class="label pull-right bg-color-darken">14</span></span> </span> </a>
+				</li>
+				<li>
+					<a href="#calendar.html" class="jarvismetro-tile big-cubes bg-color-orangeDark"> <span class="iconbox"> <i class="fa fa-calendar fa-4x"></i> <span>Calendar</span> </span> </a>
+				</li>
+				<li>
+					<a href="#gmap-xml.html" class="jarvismetro-tile big-cubes bg-color-purple"> <span class="iconbox"> <i class="fa fa-map-marker fa-4x"></i> <span>Maps</span> </span> </a>
+				</li>
+				<li>
+					<a href="#invoice.html" class="jarvismetro-tile big-cubes bg-color-blueDark"> <span class="iconbox"> <i class="fa fa-book fa-4x"></i> <span>Invoice <span class="label pull-right bg-color-darken">99</span></span> </span> </a>
+				</li>
+				<li>
+					<a href="#gallery.html" class="jarvismetro-tile big-cubes bg-color-greenLight"> <span class="iconbox"> <i class="fa fa-picture-o fa-4x"></i> <span>Gallery </span> </span> </a>
+				</li>
+				<li>
+					<a href="javascript:void(0);" class="jarvismetro-tile big-cubes selected bg-color-pinkDark"> <span class="iconbox"> <i class="fa fa-user fa-4x"></i> <span>My Profile </span> </span> </a>
+				</li>
+			</ul>
+		</div>
+		<!-- END SHORTCUT AREA -->
+
+		<!--================================================== -->
+
+		<!-- PACE LOADER - turn this on if you want ajax loading to show (caution: uses lots of memory on iDevices)-->
+			<script data-pace-options='{ "restartOnRequestAfter": true }' src="js/plugin/pace/pace.min.js"></script>
+
+			<!-- Link to Google CDN's jQuery + jQueryUI; fall back to local -->
+			<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+			<script>
+				if (!window.jQuery) {
+					document.write('<script src="js/libs/jquery-2.0.2.min.js"><\/script>');
+				}
+			</script>
+
+			<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+			<script>
+				if (!window.jQuery.ui) {
+					document.write('<script src="js/libs/jquery-ui-1.10.3.min.js"><\/script>');
+				}
+			</script>
+
+			<!-- IMPORTANT: APP CONFIG -->
+			<script src="js/app.config.js"></script>
+
+			<!-- JS TOUCH : include this plugin for mobile drag / drop touch events-->
+			<script src="js/plugin/jquery-touch/jquery.ui.touch-punch.min.js"></script> 
+
+			<!-- BOOTSTRAP JS -->
+			<script src="js/bootstrap/bootstrap.min.js"></script>
+			<script src="js/bootstrap/bootstrap-datetimepicker.min.js"></script>
+
+			<script src="__js/jquery.datetimepicker.js"></script>
+
+			<!-- CUSTOM NOTIFICATION -->
+			<script src="js/notification/SmartNotification.min.js"></script>
+
+			<!-- JARVIS WIDGETS -->
+			<script src="js/smartwidgets/jarvis.widget.min.js"></script>
+
+			<!-- EASY PIE CHARTS -->
+			<script src="js/plugin/easy-pie-chart/jquery.easy-pie-chart.min.js"></script>
+
+			<!-- SPARKLINES -->
+			<script src="js/plugin/sparkline/jquery.sparkline.min.js"></script>
+
+			<!-- JQUERY VALIDATE -->
+			<script src="js/plugin/jquery-validate/jquery.validate.min.js"></script>
+
+			<!-- JQUERY MASKED INPUT -->
+			<script src="js/plugin/masked-input/jquery.maskedinput.min.js"></script>
+
+			<!-- JQUERY SELECT2 INPUT -->
+			<script src="js/plugin/select2/select2.min.js"></script>
+
+			<!-- JQUERY UI + Bootstrap Slider -->
+			<script src="js/plugin/bootstrap-slider/bootstrap-slider.min.js"></script>
+
+			<!-- browser msie issue fix -->
+			<script src="js/plugin/msie-fix/jquery.mb.browser.min.js"></script>
+
+			<!-- FastClick: For mobile devices -->
+			<script src="js/plugin/fastclick/fastclick.min.js"></script>
+
+			<!--[if IE 8]>
+
+			<h1>Your browser is out of date, please update your browser by going to www.microsoft.com/download</h1>
+
+			<![endif]-->
+
+			<!-- Demo purpose only -->
+			<script src="js/demo.min.js"></script>
+
+			<!-- MAIN APP JS FILE -->
+			<script src="js/app.min.js"></script>
+
+			<!-- ENHANCEMENT PLUGINS : NOT A REQUIREMENT -->
+			<!-- Voice command : plugin -->
+			<script src="js/speech/voicecommand.min.js"></script>
+
+			<script src="js/plugin/superbox/superbox.js"></script>
+			
+			<!-- PAGE RELATED PLUGIN(S) -->
+			<script src="js/plugin/maxlength/bootstrap-maxlength.min.js"></script>
+			<script src="js/plugin/bootstrap-timepicker/bootstrap-timepicker.min.js"></script>
+			<script src="js/plugin/clockpicker/clockpicker.min.js"></script>
+			<script src="js/plugin/bootstrap-tags/bootstrap-tagsinput.min.js"></script>
+			<script src="js/plugin/noUiSlider/jquery.nouislider.min.js"></script>
+			<script src="js/plugin/ion-slider/ion.rangeSlider.min.js"></script>
+			<script src="js/plugin/colorpicker/bootstrap-colorpicker.min.js"></script>
+			<script src="js/plugin/knob/jquery.knob.min.js"></script>
+			<script src="js/plugin/x-editable/moment.min.js"></script>
+			<script src="js/plugin/x-editable/jquery.mockjax.min.js"></script>
+			<script src="js/plugin/x-editable/x-editable.min.js"></script>
+			<script src="js/plugin/typeahead/typeahead.min.js"></script>
+			<script src="js/plugin/typeahead/typeaheadjs.min.js"></script>
+			
+			<!-- Flot Chart Plugin: Flot Engine, Flot Resizer, Flot Tooltip -->
+			<script src="js/plugin/flot/jquery.flot.cust.min.js"></script>
+			<script src="js/plugin/flot/jquery.flot.resize.min.js"></script>
+			<script src="js/plugin/flot/jquery.flot.tooltip.min.js"></script>
+			
+			<!-- Vector Maps Plugin: Vectormap engine, Vectormap language -->
+			<script src="js/plugin/vectormap/jquery-jvectormap-1.2.2.min.js"></script>
+			<script src="js/plugin/vectormap/jquery-jvectormap-world-mill-en.js"></script>
+
+			<script src="js/plugin/datatables/jquery.dataTables.min.js"></script>
+			<script src="js/plugin/datatables/dataTables.colVis.min.js"></script>
+			<script src="js/plugin/datatables/dataTables.tableTools.min.js"></script>
+			<script src="js/plugin/datatables/dataTables.bootstrap.min.js"></script>
+			<script src="js/plugin/datatable-responsive/datatables.responsive.min.js"></script>
+
+			<script src="js/plugin/bootstrap-multiselect/bootstrap-multiselect.js"></script>
+			
+			<script src="js/jquery.shorten.1.0.js"></script>
+
+			<script src="js/mediaelement-and-player.min.js"></script>
+
+			<script src="js/bootstrap-datetimepicker.ru.js"></script>
+			<!-- Full Calendar -->
+			<script src="js/plugin/fullcalendar/jquery.fullcalendar.min.js"></script>
+
+			<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+
+			<script src="js/main.js"></script>
+
+	</body>
+</html>
